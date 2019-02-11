@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title> Student Record Entry </title>
+      <script type="text/javascript">
+        function studentDetails()
+        {
+          var fname = document.getElementById('fullname').value;
+            var birth = document.getElementById('birth').value;
+        }
+      </script>
+  </head>
+
+  <body>
+    <h3 style="text-align:center;"> Student Details To Enroll </h3>
+
+    <form>
+      Full Name: <input type="text" name="fullname" id="fullname" placeholder="Enter your full name"/> </br>
+      </br>
+      Place of Birth: <input type="text" name="birth" id="birth" placeholder="Enter your birth place"/> </br>
+      </br>
+      Gender: <input type="radio" name="gender" value="male" checked /> Male
+              <input type="radio" name="gender" value="female" /> Female
+      </br>
+      </br>
+
+      <!-- <div style="text-align: center;">
+         <input type="submit" value="submit"/>
+      </div> -->
+            <input type="submit" value="submit" onclick="studentDetails()"/>
+
+    </form>
+
+  </body>
+</html>
