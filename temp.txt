@@ -1,0 +1,40 @@
+    hearCaptcha: function(){
+        //console.log("hearCaptch function",this.captchaData,typeof this.captchaData);
+
+        var captchaDatainArr = this.captchaData.split('');
+        //console.log(captchaDatainArr);
+
+        var audioArr = [];
+        var captchaDatainArrLength = captchaDatainArr.length;
+        //console.log(captchaDatainArrLength);
+        for(var i=0;i<captchaDatainArrLength;i++){
+            captchaDatainArr[i] = audioArr.push("node_modules/speedboat_ui/captcha_audio/"+captchaDatainArr[i]+".wav");
+        }
+        console.log(audioArr);
+        
+        //console.log(audioArr.join(''));
+        
+
+        function playAudio(source){
+            var audio = new Audio();
+            audio.src = source;
+            audio.play();
+        }
+
+        // setInterval(function(){
+        //     playAudio("node_modules/speedboat_ui/captcha_audio/7.wav");
+        // },3000);
+
+        // setTimeout(function(){
+        //     clearInterval(16000)
+        // },3000);
+
+        // (function iife(){
+        //     clearInterval(16000)})();
+
+        
+
+
+
+        
+    },
