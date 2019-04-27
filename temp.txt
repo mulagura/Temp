@@ -66,3 +66,18 @@ var arr = ['one','two','three','four','five'];
          setTimeout(function(){
             clearInterval(timing);
          },15000);
+         
+         
+         
+         
+         
+             function check(strr){
+             if(strr == strr.toLowerCase() && strr != strr.toUpperCase()){
+                strr = strr+'_';
+             }
+             console.log(strr);
+        }
+        check("a");
+        check("7")
+        check("Z");
+
