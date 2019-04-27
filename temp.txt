@@ -38,3 +38,31 @@
 
         
     },
+
+
+
+
+var arr = ['one','two','three','four','five'];
+        
+        var num =0; 
+
+        function playAudio(num){
+            
+           
+            console.log(arr[num]);   
+
+        }   
+        
+
+
+    var timing = setInterval(function(){
+            
+            playAudio(num);
+         
+                 num++;
+            
+         },3000);
+
+         setTimeout(function(){
+            clearInterval(timing);
+         },15000);
