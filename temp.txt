@@ -1,25 +1,26 @@
-console.log("this.loggedInUserInfothis.loggedInUserInfothis.loggedInUserInfo-->",typeof this.loggedInUserInfo);
-console.log("this.loggedInUserInfothis-->",this.loggedInUserInfo.userContext.timeOfLogin);
+    function fetchTime() {
 
-var userDate = new Date(this.loggedInUserInfo.userContext.timeOfLogin);
-console.log("from logs-->",userDate);
-console.log("year:",userDate.getFullYear());
-console.log("month",userDate.getMonth()+1);
-console.log("date",userDate.getDate());
-console.log("hours in 24 format",userDate.getHours());
-console.log("minutes",userDate.getMinutes());
-console.log("seconds",userDate.getSeconds()); 
- 
-var userLoggedTimeStamp = [];
-var maxUserLoggedTimeStampLength = 5;
+        // console.log("apna time ayega");
 
-userLoggedTimeStamp = userLoggedTimeStamp.splice(0,maxUserLoggedTimeStampLength);
-console.log("userLoggedTimeStamp",userLoggedTimeStamp);
-console.log("userLoggedTimeStamp length->",userLoggedTimeStamp.length);
+        var presentLoggedIn = Date.now();
+        var lastLoggedIn = presentLoggedIn;
+       
 
-userLoggedTimeStamp.push(userDate);
+        setTimeout(function(){
+            if(presentLoggedIn<Date.now()){
+            console.log(":inside if:");
+            lastLoggedIn = presentLoggedIn;
+            presentLoggedIn = Date.now();
+            console.log("presentLoggedIn",presentLoggedIn);
+            console.log("lastLoggedIn",lastLoggedIn);
+          
+        }
+        },100);
+        // console.log(Date.now());
+        
+        
 
-console.log("userLoggedTimeStamp",userLoggedTimeStamp);
-console.log("userLoggedTimeStamp length->",userLoggedTimeStamp.length);
 
-Fri May 03 2019 17:40:13 GMT+0530 (India Standard Time)
+    }
+
+    fetchTime();
