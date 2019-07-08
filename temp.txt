@@ -24,3 +24,170 @@
     }
 
     fetchTime();
+    
+    
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MultiSelect React App</title>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+
+<script type="text/babel">
+                    class MultiSelect extends React.Component {
+                                    constructor(props) {
+                                    super(props);
+                                    this.state = {
+
+                                        country: '',countryState:'',city:'',
+                                        data:[
+                                        
+                                                  { CountryName: 'India', States: [
+                                                                                {
+                                                                                StateName:"Maharashtra",
+                                                                                Cities:[
+                                                                                        "Pune",
+                                                                                        "Nagpur",
+                                                                                        "Mumbai"
+                                                                                        ]
+                                                                                },
+                                                                                {
+                                                                                StateName:"Kerala",
+                                                                                Cities:[
+                                                                                            "Kochi",
+                                                                                            "Munnar"
+                                                                                        ]
+                                                                                }
+                                                                            ]
+                                                    },
+
+                                                    { CountryName: 'USA', States: [
+                                                                                {
+                                                                                StateName:"Texas",
+                                                                                Cities:[
+                                                                                        "dallas"
+                                                                                        ]
+                                                                                },
+                                                                                {
+                                                                                StateName:"FLorida",
+                                                                                Cities:[
+                                                                                            "jacksonville",
+                                                                                            "tallhase"
+                                                                                        ]
+                                                                                }
+                                                                            ]
+                                                    },
+
+
+                                        
+                                            
+                                        ] // data
+                                            
+                                        
+                                            } // this.state   
+                        
+
+                                    this.handleChange = this.handleChange.bind(this);
+                                    this.handleSubmit = this.handleSubmit.bind(this);
+                                } 
+
+                                handleChange(event) {
+                                    //console.log(event);
+                                    
+                                    this.setState({country: event.target.value});
+                                    this.setState({countryState: event.target.value});
+                                    this.setState({city: event.target.value});
+                                    console.log('onchange->',event.target.value);
+                                    
+                                }
+
+                                handleSubmit(event) {
+                                    //console.log(event);
+                                    console.log('onsubmit->',this.state.country);
+                                    
+                                    alert('submitted: ' + this.state.country + '' + this.state.countryState + '' + this.state.city );
+                                    event.preventDefault();
+                                }
+
+                       render() {
+       
+                        const { data,country,countryState,city } = this.state;
+                        
+                        var stateArr = []
+                        function getStates(data){
+                            stateArr.push(data);
+                            console.log('stateArr',stateArr);
+                            return stateArr;
+                        }
+                        
+                        
+                                    
+                        return (
+
+                           <form onSubmit={this.handleSubmit}>
+
+                            <label> Select Country : <select value={country} onChange={this.handleChange}> 
+                                                            
+                                                            {
+                                                                data.map((cntry,indx)=>{
+                                                                    const cntryArr = cntry.States;
+                                                                    getStates(cntryArr);
+                                                                    return <option key={indx} value={cntry.CountryName}> {cntry.CountryName} </option>
+                                                                })
+                                                            }
+                                                      </select>      
+                            </label>
+                            <label> Select State : <select value={countryState} onChange={this.handleChange}> 
+                                                              
+                                    {data.map((cntry,indx) => (
+                                                                <option key={indx} value={cntry}>
+                                                                {cntry.States.map((stat)=>(
+                                                                    stat.StateName
+                                                                ))}
+                                                                </option>
+                                                            ))} 
+                                                      </select>      
+                            </label>
+                            <label> Select City : <select value={city} onChange={this.handleChange}> 
+                                                              {data.map((cntry,indx) => (
+                                                                <option key={indx} value={cntry}>
+                                                                {cntry.States.map((stat)=>(
+                                                                    stat.Cities
+                                                                ))}
+                                                                </option>
+                                                            ))}
+                                                      </select>      
+                            </label> <br /> <br />
+                            
+                            <input type="submit" value="Submit"/> <br/>
+                            <label> you selected:-> 
+                             country : <b> {this.state.country} </b> state: <b> {this.state.countryState} </b> city: <b> {this.state.city}</b>
+                            </label> <br/> <br/>
+                            <label> in json format:->
+                                    <p>{JSON.stringify(this.state)}</p>
+                            </label>
+
+                           </form> 
+
+                        );
+                                } // render
+                                                           } // component
+            ReactDOM.render(
+                <MultiSelect />,
+                document.getElementById('root')
+            );
+</script>
+</body>
+
+</html>
