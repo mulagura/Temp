@@ -26,6 +26,8 @@
     fetchTime();
     
     
+    change dropdown value based on another dropdown reactjs
+    
     <!DOCTYPE html>
 <html lang="en">
 
@@ -98,15 +100,32 @@
                                             } // this.state   
                         
 
-                                    this.handleChange = this.handleChange.bind(this);
+                                    this.handleChange1 = this.handleChange1.bind(this);
+                                    this.handleChange2 = this.handleChange2.bind(this);
+                                    this.handleChange3 = this.handleChange3.bind(this);
                                     this.handleSubmit = this.handleSubmit.bind(this);
                                 } 
 
-                                handleChange(event) {
+                                handleChange1(event) {
                                     //console.log(event);
                                     
                                     this.setState({country: event.target.value});
+                                    console.log('onchange->',event.target.value);
+                                    
+                                }
+
+                                handleChange2(event) {
+                                    //console.log(event);
+                                    
                                     this.setState({countryState: event.target.value});
+                                
+                                    console.log('onchange->',event.target.value);
+                                    
+                                }
+
+                                handleChange3(event) {
+                                    //console.log(event);
+                                   
                                     this.setState({city: event.target.value});
                                     console.log('onchange->',event.target.value);
                                     
@@ -114,59 +133,50 @@
 
                                 handleSubmit(event) {
                                     //console.log(event);
-                                    console.log('onsubmit->',this.state.country);
-                                    
-                                    alert('submitted: ' + this.state.country + '' + this.state.countryState + '' + this.state.city );
                                     event.preventDefault();
+                                    alert('submitted: ' + this.state.country + '' + this.state.countryState + '' + this.state.city );
+                                    //event.preventDefault();
                                 }
 
                        render() {
        
-                        const { data,country,countryState,city } = this.state;
-                        
-                        var stateArr = []
-                        function getStates(data){
-                            stateArr.push(data);
-                            console.log('stateArr',stateArr);
-                            return stateArr;
-                        }
-                        
-                        
+                        let { data,country,countryState,city } = this.state;
+
+                        let { cntry } = data;
+                        cntry = data.map((cn,indx)=> <option key={indx} value={cn.CountryName}>{cn.CountryName}</option>);
+
+                        let { cntryStates } = cntry;
+                        cntryStates = data.map( n =>
+                            n.States.map((st,i)=> <option key={i} value={st.StateName}>{st.StateName}</option>)
+                        );
+
+                        let { stateCities } = data;
+                        stateCities = data.map( n =>
+                            n.States.map((st,i)=> <option key={i} value={st.Cities}>{st.Cities}</option>)
+                        );
+
                                     
                         return (
 
                            <form onSubmit={this.handleSubmit}>
 
-                            <label> Select Country : <select value={country} onChange={this.handleChange}> 
+                            <label> Select Country : <select value={country} onChange={this.handleChange1}> 
                                                             
                                                             {
-                                                                data.map((cntry,indx)=>{
-                                                                    const cntryArr = cntry.States;
-                                                                    getStates(cntryArr);
-                                                                    return <option key={indx} value={cntry.CountryName}> {cntry.CountryName} </option>
-                                                                })
+                                                                cntry
                                                             }
                                                       </select>      
                             </label>
-                            <label> Select State : <select value={countryState} onChange={this.handleChange}> 
+                            <label> Select State : <select value={countryState} onChange={this.handleChange2}> 
                                                               
-                                    {data.map((cntry,indx) => (
-                                                                <option key={indx} value={cntry}>
-                                                                {cntry.States.map((stat)=>(
-                                                                    stat.StateName
-                                                                ))}
-                                                                </option>
-                                                            ))} 
+                                    {cntryStates}
+                                                       
+
                                                       </select>      
                             </label>
-                            <label> Select City : <select value={city} onChange={this.handleChange}> 
-                                                              {data.map((cntry,indx) => (
-                                                                <option key={indx} value={cntry}>
-                                                                {cntry.States.map((stat)=>(
-                                                                    stat.Cities
-                                                                ))}
-                                                                </option>
-                                                            ))}
+                            <label> Select City : <select value={city} onChange={this.handleChange3}> 
+                                    {stateCities}
+                                                              
                                                       </select>      
                             </label> <br /> <br />
                             
@@ -191,6 +201,3 @@
 </body>
 
 </html>
-
-https://jsfiddle.net/patelriki13/m1ezs70o/
-https://stackoverflow.com/questions/46582771/assign-a-value-to-a-variable-in-jsx-for-reactjs
