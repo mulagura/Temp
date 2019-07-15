@@ -1,3 +1,15 @@
+1. ajax
+2. fetch
+3. cross origin
+4. debounce
+5. throttling
+6. search
+7. filtering
+8. sorting
+    
+    
+    
+    
     function fetchTime() {
 
         // console.log("apna time ayega");
