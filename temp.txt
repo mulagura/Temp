@@ -1,5 +1,5 @@
 1. ajax
-2. fetch
+2. fetch https://itnext.io/that-data-looks-so-fetching-on-you-understanding-the-js-fetch-api-880eae0c8d25
 async/await/promises
 json
 console 
