@@ -1,5 +1,8 @@
 1. ajax
 2. fetch
+json
+console 
+data_array_object_access.html
 3. cross origin
 4. debounce
 5. throttling
