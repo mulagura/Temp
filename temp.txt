@@ -1,5 +1,6 @@
 1. ajax
 2. fetch
+async/await/promises
 json
 console 
 data_array_object_access.html
