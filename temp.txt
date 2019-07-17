@@ -5,6 +5,7 @@ json
 console 
 data_array_object_access.html
 3. cross origin
+tree shaking
 4. debounce
 5. throttling
 6. search
