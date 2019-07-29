@@ -5,6 +5,7 @@ include, local and sessionstoarge in resume and learn from akshay and more
 include, data visualization in one project, know how to overide default and everything, pick ypur own visualization
 
 
+
 1. ajax
 2. fetch https://itnext.io/that-data-looks-so-fetching-on-you-understanding-the-js-fetch-api-880eae0c8d25
 async/await/promises
@@ -18,6 +19,12 @@ tree shaking
 6. search
 7. filtering
 8. sorting
+
+regex and oops
+Algorithms
+
+host apps and web apps in github pages, js and angular -> js with sorting filtering,searching ....
+angular with forms and ...
     
     
     
