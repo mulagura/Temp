@@ -1,3 +1,12 @@
+Difference between let and const?
+How to find duplicates in array?
+Design pattern in JavaScript?
+What is Closure?
+What is Event Bubbling?
+What is Hosting?
+What are the ways to create object in JavaScript?
+What is the purpose of ‘this’ keyword?
+
 Interview QnA, angular,js,html&css
 prepare
 
