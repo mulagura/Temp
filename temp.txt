@@ -1,3 +1,7 @@
+over riding in js and over loading in typescript as optional paramter function
+
+
+
 Difference between let and const?
 How to find duplicates in array?
 Design pattern in JavaScript?
