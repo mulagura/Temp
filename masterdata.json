@@ -1,0 +1,132 @@
+{
+"cities":[ {
+       "Bangalore":[
+			    {
+					"name":"Lakshmi Theatre",
+					"capacity": 50,
+					"address":"some address"
+		        },
+
+   		        {
+					"name":"Gopalan Theatre",
+					"capacity":50,
+					"address":"some address"
+		        },
+
+		        {
+					"name":"Sandhya 4k Theatre",
+					"capacity": 50,
+					"address":"some address"
+		        },
+
+		        {
+					"name":" srinivas Theatre",
+					"capacity": 50,
+					"address":"some address"
+		        }
+	 
+	    ],
+     "Hyderabad":[
+				{
+					"name": "Carnival Cinemas",
+					"capacity": 50,
+					"address" : "some address"
+   	   	        },
+
+		        {
+					"name":"Rajdhani Cinemas",
+					"capacity": 50,
+					"address":"some address"
+		        },
+
+		        {
+					"name": "Pvr  Cinemas",
+					"capacity": 50,
+					"address": "some address"
+		        }
+	    ],
+
+     "Mumbai": [
+		        {
+					"name": "Inox Theaters",
+					"capacity": "50",
+					"address": "some address"
+		        },
+
+		        {
+					"name": "Woodlands",
+					"capacity": "50",
+					"address": "some address"
+		        }
+	        ]
+	       }
+	    ],
+
+	 "movies":[ {
+	
+			"kanada": [
+						{
+							"title":"K.G.F",
+							"Desc":"some desc"
+						},
+
+						{
+							"title":"Googly",
+							"Desc":"some desc"
+						},
+
+						{
+							"title":"X-men",
+							"Desc":"some desc"
+						}	  
+					],
+
+			"Telugu": [
+						{
+							"title":"ismart",
+							"Desc":"some desc"
+						},
+
+						{
+							"title":"Dear comrade",
+							"Desc":"some desc"
+						}
+					],
+
+			"Hindi": [    
+						{
+							"title":"Kabir singh",
+							"Desc":"some desc"
+						},
+		  
+						{
+							"title":"Kesari",
+							"Desc":"some desc"
+						},
+						
+						{
+							"title":"Sattlite shankar",
+							"Desc":"some desc"
+						},
+
+						{
+							"title":"Yajammana",
+							"Desc":"some desc"
+						},
+
+						{
+							"title":"Ki ka",
+							"Desc":"some desc"
+						}
+					]
+	            }
+              ]  
+     }
+	  
+
+
+	  
+
+
+
+
