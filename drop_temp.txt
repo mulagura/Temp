@@ -1,0 +1,130 @@
+app.component.html
+.............................................................................
+
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <!-- <button type="button" class="btn btn-success"> click </button> <br><br> -->
+
+  <div>
+
+    <select id="cityName" size="1" (change)="onCityChange($event)"  #cityRef>
+      <option value="" selected="selected" disabled> select city name </option>
+      <option [value]="city" [selected]="selected" *ngFor="let city of cityNames"> {{city}} </option>
+    </select> <br><br>
+
+    <select id="placeName" size="1" (change)="onPlaceChange($event)" #placeRef>
+        <option value="" selected="selected" disabled> select places </option>
+        <option [value]="place" [selected]="selected" *ngFor="let place of placeNames"> {{place}}  </option>
+    </select> <br><br>
+
+    <button type="submit" class="btn btn-success" (click)="displaySelected(cityRef,placeRef)"> click </button> <br><br>
+
+
+
+
+  </div>
+
+
+</div>
+
+<router-outlet></router-outlet>
+
+................................................................................................
+app.component.ts
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  
+  //title = 'angular-infy-session';
+
+   public jsonObject:any = {
+
+    "Tirupathi": ["korlagunta", "leelamahal","sanjay gandhi colony","alipiri"],
+    "Bangalore": ["madiwala", "marathalli"],
+    "Chennai": ["sholinganallur", "cmbt"]
+    
+    }
+
+    disable:boolean = true;
+    // hide:boolean = true;
+
+    // numberOfKeys:Number = Object.keys(this.jsonObject).length;
+    numberOfKeys:any = 0;
+    cityNames:Array<any> = [];
+    placeNames:Array<any> = [];
+
+    constructor(){
+
+
+      for(let city in this.jsonObject){
+
+        // console.log(this.jsonObject[city]);
+        
+
+        if(this.jsonObject.hasOwnProperty(city)){
+          this.numberOfKeys++;
+          this.cityNames.push(city);
+        }
+
+      } // End obj loop
+
+     
+
+    } // End constructor
+    
+
+    
+
+    onCityChange(e){
+      console.log('city changed');
+      // console.log(this.cityNames,typeof this.cityNames);
+      console.log(e.target.value);
+
+      const selectedCity = e.target.value;
+
+      for(let place in this.jsonObject){
+
+          if(selectedCity === place){
+
+             let individualLength = this.jsonObject[place].length; 
+            for(let i=0;i<individualLength;i++){
+              this.placeNames.push(this.jsonObject[place][i]);
+            }
+            
+          }
+
+      }
+
+      // console.log(this.placeNames);
+      
+
+    }
+
+    onPlaceChange(e){
+      console.log('place changed');
+      console.log(e.target.value);
+
+    }
+
+
+
+
+    displaySelected(city:HTMLInputElement,place:HTMLInputElement){
+      console.log('selected city is:->',city.value,'selected place is:->',place.value);
+    }
+
+
+
+
+
+} // end of comp modules
+
