@@ -90,7 +90,7 @@ export class AppComponent {
       console.log(e.target.value);
 
       const selectedCity = e.target.value;
-
+    this.placeNames =[];
       for(let place in this.jsonObject){
 
           if(selectedCity === place){
