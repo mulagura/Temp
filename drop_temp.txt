@@ -1,5 +1,9 @@
+keep masterdata.json in assets folder and change json data as pasted below
+
+register service in app.module and create app service and find app.service.ts below
+
+............................................
 app.component.html
-.............................................................................
 
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
@@ -11,18 +15,23 @@ app.component.html
   <div>
 
     <select id="cityName" size="1" (change)="onCityChange($event)"  #cityRef>
-      <option value="" selected="selected" disabled> select city name </option>
+      <option selected="selected" disabled> select city name </option>
       <option [value]="city" [selected]="selected" *ngFor="let city of cityNames"> {{city}} </option>
     </select> <br><br>
 
-    <select id="placeName" size="1" (change)="onPlaceChange($event)" #placeRef>
-        <option value="" selected="selected" disabled> select places </option>
-        <option [value]="place" [selected]="selected" *ngFor="let place of placeNames"> {{place}}  </option>
+    <select id="theatreName" size="1" (change)="onTheatreChange($event)" #theatreRef>
+        <option  selected="selected" disabled> select Theatre </option>
+        <option [value]="theatre" [selected]="selected" *ngFor="let theatre of theatreNames"> {{theatre}}  </option>
     </select> <br><br>
 
-    <button type="submit" class="btn btn-success" (click)="displaySelected(cityRef,placeRef)"> click </button> <br><br>
+    <select id="langName" size="1" (change)="onLangChange($event)" #langRef>
+      <option  selected="selected" disabled> select Language </option>
+      <option [value]="lang" [selected]="selected" *ngFor="let lang of movieLanguages"> {{lang}}  </option>
+    </select> <br><br>
 
-
+    <p id="moviedetails" *ngFor="let movie of moviedetails"> Movies Name is: <b>{{movie.title}}</b> and Description: {{movie.desc}} </p>
+  
+    <button type="submit" class="btn btn-success" (click)="displaySelected(cityRef,theatreRef,langRef)"> click </button> <br><br>
 
 
   </div>
@@ -32,10 +41,13 @@ app.component.html
 
 <router-outlet></router-outlet>
 
-................................................................................................
+.............................................................................
 app.component.ts
 
-import { Component } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
+
+import { ApiService } from './app.service';
+import { isArray } from 'util';
 
 @Component({
   selector: 'app-root',
@@ -44,82 +56,201 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  //title = 'angular-infy-session';
 
-   public jsonObject:any = {
+    public jsonData:any;
 
-    "Tirupathi": ["korlagunta", "leelamahal","sanjay gandhi colony","alipiri"],
-    "Bangalore": ["madiwala", "marathalli"],
-    "Chennai": ["sholinganallur", "cmbt"]
-    
-    }
-
-    disable:boolean = true;
-    // hide:boolean = true;
-
-    // numberOfKeys:Number = Object.keys(this.jsonObject).length;
-    numberOfKeys:any = 0;
     cityNames:Array<any> = [];
-    placeNames:Array<any> = [];
+    theatreNames:Array<any> = [];
+    movieLanguages:Array<any> = [];
 
-    constructor(){
+    moviedetails:any;
 
 
-      for(let city in this.jsonObject){
+    selectedCity:String;
+    selectedTheatre:String;
+    selectedLang:String;
 
-        // console.log(this.jsonObject[city]);
-        
 
-        if(this.jsonObject.hasOwnProperty(city)){
-          this.numberOfKeys++;
-          this.cityNames.push(city);
-        }
 
-      } // End obj loop
 
-     
+    constructor(private apiService: ApiService){
 
     } // End constructor
-    
+
+    ngOnInit(){
+
+          this.apiService.getData().subscribe((data)=>{
+
+            this.jsonData = data;
+
+            for(let data in this.jsonData){
+
+              // to get cities
+              for(let i=0;i<this.jsonData[data].length;i++){
+
+               this.cityNames = Object.keys(this.jsonData[data][i]);
+
+              } // end of loop
+              
+              
+              
+      
+              
+      
+            } // End obj loop
+
+
+        
+          });
+
+
+
+    } // End ngOnInit
 
     
 
     onCityChange(e){
-      console.log('city changed');
-      // console.log(this.cityNames,typeof this.cityNames);
-      console.log(e.target.value);
 
-      const selectedCity = e.target.value;
-    this.placeNames =[];
-      for(let place in this.jsonObject){
+          console.log('city changed',e.target.value);
 
-          if(selectedCity === place){
-
-             let individualLength = this.jsonObject[place].length; 
-            for(let i=0;i<individualLength;i++){
-              this.placeNames.push(this.jsonObject[place][i]);
-            }
+           this.selectedCity = e.target.value;
             
-          }
+           this.theatreNames.length = 0;
+           this.movieLanguages.length = 0;
+           
 
-      }
+          for(let data in this.jsonData){
 
-      // console.log(this.placeNames);
+          
+            for(let i=0;i<this.jsonData[data].length;i++){
+
+            
+              for( let theatre in this.jsonData[data][i] ){
+
+                if(this.selectedCity === theatre){
+
+                  for( let j=0;j<this.jsonData[data][i][theatre].length;j++ ){
+                    this.theatreNames.push( this.jsonData[data][i][theatre][j].name );
+                  } // end of j loop
+        
+                }
+                
+              } //end of obj2 loop
+              
+
+            } //end of i loop
+
+
+          } // end of obj loop
+
+ 
+    }
+
+    onTheatreChange(e){
+
+      console.log('theatre changed',e.target.value);
+      this.selectedTheatre = e.target.value;
+
+      
+      this.movieLanguages.length = 0;
       
 
+      for(let data in this.jsonData){
+
+      
+        for(let i=0;i<this.jsonData[data].length;i++){
+
+        
+          for( let theatre in this.jsonData[data][i] ){
+
+            
+              for(let j=0;j<this.theatreNames.length;j++){
+
+
+                if( this.selectedCity === theatre && this.selectedTheatre === this.theatreNames[j] )
+                {
+                
+                  for(let k=0;k<this.jsonData[data][i][theatre][j].movies.length;k++){
+          
+                      this.movieLanguages.push( Object.keys( this.jsonData[data][i][theatre][j].movies[k] ) );
+                       
+                  } // end of k loop
+
+                }
+                       
+            } // end of j loop
+ 
+            
+          } //end of obj2 loop
+          
+
+        } //end of i loop
+
+
+      } // end of obj loop
+
     }
 
-    onPlaceChange(e){
-      console.log('place changed');
-      console.log(e.target.value);
+    onLangChange(e){
+      
+      console.log('Language changed',e.target.value);
+
+      this.selectedLang = e.target.value;
+
+
+      for(let data in this.jsonData){
+
+      
+        for(let i=0;i<this.jsonData[data].length;i++){
+
+        
+          for( let theatre in this.jsonData[data][i] ){
+
+            
+              for(let j=0;j<this.theatreNames.length;j++){
+
+
+                if( this.selectedCity === theatre && this.selectedTheatre === this.theatreNames[j] )
+                {
+                
+                  for(let k=0;k<this.jsonData[data][i][theatre][j].movies.length;k++){
+          
+                      // this.movieLanguages.push( Object.keys( this.jsonData[data][i][theatre][j].movies[k] ) );
+                     // console.log( this.jsonData[data][i][theatre][j].movies[k] );
+
+                      for(let lang in this.jsonData[data][i][theatre][j].movies[k] ){
+
+                        if(this.selectedLang === lang )
+
+                        this.moviedetails = this.jsonData[data][i][theatre][j].movies[k][lang];
+
+                      }
+                      
+                       
+                  } // end of k loop
+
+                }
+                       
+            } // end of j loop
+ 
+            
+          } //end of obj2 loop
+          
+
+        } //end of i loop
+
+
+      } // end of obj loop
+
+
 
     }
 
 
 
 
-    displaySelected(city:HTMLInputElement,place:HTMLInputElement){
-      console.log('selected city is:->',city.value,'selected place is:->',place.value);
+    displaySelected(city:HTMLInputElement,theatre:HTMLInputElement,lang:HTMLInputElement){
+      console.log('selected city is:->',city.value,'&','theatre is:->',theatre.value,'&', 'language is:->',lang.value);
     }
 
 
@@ -127,4 +258,140 @@ export class AppComponent {
 
 
 } // end of comp modules
+
+
+
+................................................................................................
+masterdata.json
+
+{
+
+"cities":[ {
+       "Bangalore":[
+			    {
+					"name":"Lakshmi Theatre",
+					"capacity": 50,
+					"address":"some address",
+					"movies":[
+						{"kannada":[{"title":"KGF","desc":"yash"},{"title":"Googly","desc":"goo"}]},
+						{"telugu":[{"title":"ismart","desc":"ram"},{"title":"dear comrade","desc":"vijay"}]},
+						{"english":[{"title":"hobbs","desc":"hobb"},{"title":"eng2","desc":"eng"}]}
+					]
+		        },
+
+   		        {
+					"name":"Gopalan Theatre",
+					"capacity":50,
+					"address":"some address",
+					"movies":[
+						{"kannada":[{"title":"KGF","desc":"yash"},{"title":"Googly","desc":"goo"}]},
+						{"telugu":[{"title":"ismart","desc":"ram"},{"title":"dear comrade","desc":"vijay"}]},
+						{"english":[{"title":"hobbs","desc":"hobb"},{"title":"eng2","desc":"eng"}]}
+					]
+		        },
+
+		        {
+					"name":"Sandhya 4k Theatre",
+					"capacity": 50,
+					"address":"some address",
+					"movies":[
+						{"kannada":[{"title":"KGF","desc":"yash"},{"title":"Googly","desc":"goo"}]},
+						{"telugu":[{"title":"ismart","desc":"ram"},{"title":"dear comrade","desc":"vijay"}]}
+					]
+		        },
+
+		        {
+					"name":" srinivas Theatre",
+					"capacity": 50,
+					"address":"some address",
+					"movies":[
+						{"telugu":[{"title":"ismart","desc":"ram"},{"title":"dear comrade","desc":"vijay"}]}
+					]
+		        }
+	 
+	    ],
+     "Hyderabad":[
+				{
+					"name": "Carnival Cinemas",
+					"capacity": 50,
+					"address" : "some address",
+					"movies":[
+						{"telugu":[{"title":"ismart","desc":"ram"},{"title":"dear comrade","desc":"vijay"}]},
+						{"english":[{"title":"hobbs","desc":"hobb"},{"title":"eng2","desc":"eng"}]}
+					]
+   	   	        },
+
+		        {
+					"name":"Rajdhani Cinemas",
+					"capacity": 50,
+					"address":"some address",
+					"movies":[
+						{"telugu":[{"title":"ismart","desc":"ram"},{"title":"dear comrade","desc":"vijay"}]}
+					]
+		        },
+
+		        {
+					"name": "Pvr  Cinemas",
+					"capacity": 50,
+					"address": "some address",
+					"movies":[
+						{"telugu":[{"title":"ismart","desc":"ram"},{"title":"dear comrade","desc":"vijay"}]}
+					]
+		        }
+	    ],
+
+     "Mumbai": [
+		        {
+					"name": "Inox Theaters",
+					"capacity": "50",
+					"address": "some address",
+					"movies":[
+						{"hindi":[{"title":"hindi1","desc":"hindi"},{"title":"hindi2","desc":"hindi"}]},
+						{"english":[{"title":"eng1","desc":"eng"},{"title":"eng2","desc":"eng2"}]}
+					]
+		        },
+
+		        {
+					"name": "Woodlands",
+					"capacity": "50",
+					"address": "some address",
+					"movies":[
+						{"hindi":[{"title":"hindi1","desc":"hindi"},{"title":"hindi2","desc":"hindi"}]}
+					]
+		        }
+	        ]
+	       }
+		]
+		
+     }
+	  
+
+......................................................................
+app.service.ts
+
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ApiService {
+
+
+  constructor(private httpClient: HttpClient) {
+
+  }
+
+  // place images,icons etc in assets folder 
+
+  public getData(){
+    return this.httpClient.get('./assets/masterdata.json');
+  }
+
+
+}
+
+.............................................................................
+
 
