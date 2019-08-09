@@ -37,6 +37,8 @@ tree shaking
 regex and oops
 Algorithms
 
+download and check implmention and how it works, big projects on angular and js
+
 host apps and web apps in github pages, js and angular -> js with sorting filtering,searching ....
 angular with forms and ...
     
