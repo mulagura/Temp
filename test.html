@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> OOPS </title>
+</head>
+
+<style>
+
+</style>
+
+<body>
+
+<!-- ref: https://www.youtube.com/playlist?list=PLqq-6Pq4lTTaflXUL0v3TSm86nodn0c_u -->
+
+<input type="text" id="commentBox">
+<button onclick="postComment()"> comment </button>
+
+<div class="showComments">
+
+    
+
+</div>
+
+</body>
+<script>
+
+    function postComment(){
+
+        // console.log('post comment working');
+        
+        var commentBox = document.getElementById('commentBox');
+        // console.log(commentBox);
+
+        var showComments = document.querySelector('.showComments');
+        
+        var createComment = document.createElement('p');
+        createComment.innerHTML = commentBox.value;
+
+        showComments.appendChild(createComment);
+        
+        if(commentBox){
+            commentBox.value = '';
+        }
+
+
+        
+
+    }
+
+
+</script>
+
+</html>

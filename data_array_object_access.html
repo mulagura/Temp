@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> play with objects and arrays </title>
+</head>
+<body>
+    
+</body>
+<script>
+
+  // https://jsoneditoronline.org/
+  
+    var data1 = 
+    {
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "mr",
+        "first": "rolf",
+        "last": "hegdal"
+      },
+      "location": {
+        "street": "ljan terrasse 346",
+        "city": "vear",
+        "state": "rogaland",
+        "postcode": "3095",
+        "coordinates": {
+          "latitude": "54.8646",
+          "longitude": "-97.3136"
+        },
+        "timezone": {
+          "offset": "-10:00",
+          "description": "Hawaii"
+        }
+      },
+      "email": "rolf.hegdal@example.com",
+      "login": {
+        "uuid": "c4168eac-84b8-46ea-b735-c9da9bfb97fd",
+        "username": "bluefrog786",
+        "password": "ingrid",
+        "salt": "GtRFz4NE",
+        "md5": "5c581c5748fc8c35bd7f16eac9efbb55",
+        "sha1": "c3feb8887abed9ec1561b9aa2c9f58de21d1d3d9",
+        "sha256": "684c478a98b43f1ef1703b35b8bbf61b27dbc93d52acd515e141e97e04447712"
+      },
+      "dob": {
+        "date": "1975-11-12T06:34:44Z",
+        "age": 42
+      },
+      "registered": {
+        "date": "2015-11-04T22:09:36Z",
+        "age": 2
+      },
+      "phone": "66976498",
+      "cell": "40652479",
+      "id": {
+        "name": "FN",
+        "value": "12117533881"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/65.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/65.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/65.jpg"
+      },
+      "nat": "NO"
+    }
+  ],
+  "info": {
+    "seed": "2da87e9305069f1d",
+    "results": 1,
+    "page": 1,
+    "version": "1.2"
+  }
+};
+console.log(Array.isArray(data1)); // false
+console.log(data1 instanceof Object); // true
+console.log(data1 instanceof Array); // false
+console.log(data1 instanceof Number); // false
+
+
+console.log(data1.results);
+console.log(Array.isArray(data1.results)); // true
+
+console.log(data1.results.length); // 1
+
+
+console.log(data1.info.version); // 1.2
+
+// log email
+
+for(var i=0;i<data1.results.length;i++)
+{
+  console.log(data1.results[i].email);
+  
+}
+
+
+// data 2
+
+var data2 = [
+  {
+        "id": 1,
+        "name": "Afghanistan",
+        "iso3": "AFG",
+        "iso2": "AF",
+        "phone_code": "93",
+        "capital": "Kabul",
+        "currency": "AFN",
+        "states": {
+            "Badakhshan": [
+                "Eshkashem",
+                "Fayzabad",
+                "Jurm",
+                "Khandud",
+                "Qal\\'eh-ye Panjeh"
+            ],
+            "Badgis": [
+                "Bala Morghab",
+                "Qal\\'eh-ye Naw"
+            ],
+            "Baglan": [
+                "Andarab",
+                "Baghlan",
+                "Dahaneh-ye Ghawri",
+                "Nahrin",
+                "Pol-e Khumri"
+            ],
+            "Balkh": [
+                "Balkh",
+                "Dawlatabad",
+                "Mazar-e Sharif",
+                "Qarchi Gak",
+                "Shulgara",
+                "Tash Gozar"
+            ],
+            "Bamiyan": [
+                "Bamiyan",
+                "Panjab",
+                "Qil Qal\\'eh"
+            ],
+            "Farah": [
+                "Anar Darreh",
+                "Farah",
+                "Shindand"
+            ],
+            "Faryab": [
+                "Andkhvoy",
+                "Darzi Ab",
+                "Dawlatabad",
+                "Maymanah"
+            ],
+            "Gawr": [
+                "Chaghcharan",
+                "Shahrak",
+                "Taywarah"
+            ],
+            "Gazni": [
+                "Ghazni"
+            ],
+            "Herat": [
+                "Awbeh",
+                "Eslam Qal\\'eh",
+                "Ghurian",
+                "Herat",
+                "Karukh",
+                "Kuhestan",
+                "Kushk",
+                "Qarabagh",
+                "Tawraghudi",
+                "Tir Pol",
+                "Zendejan"
+            ],
+            "Hilmand": [
+                "Baghran",
+                "Darwishan",
+                "Deh Shu",
+                "Gereshk",
+                "Lashkar Gah",
+                "Sangin"
+            ],
+            "Jawzjan": [
+                "Aqchah",
+                "Qarqin",
+                "Sang-e Charak",
+                "Shibarghan"
+            ],
+            "Kabul": [
+                "Baghrami",
+                "Kabul",
+                "Mir Bachchekut",
+                "Paghman",
+                "Qarabagh",
+                "Sarawbi"
+            ],
+            "Kapisa": [
+                "Mahmud-e Raqi",
+                "Taghab"
+            ],
+            "Khawst": [
+                "Khawst"
+            ],
+            "Kunar": [
+                "Asadabad",
+                "Asmar"
+            ],
+            "Lagman": [
+                "Mehtar Lam"
+            ],
+            "Lawghar": [
+                "Azraw",
+                "Baraki Barak",
+                "Pol-e Alam"
+            ],
+            "Nangarhar": [
+                "Achin",
+                "Batsawul",
+                "Hugyani",
+                "Jalalabad",
+                "Nader Shah Kawt"
+            ],
+            "Nimruz": [
+                "Chahar Burjak",
+                "Chakhansur",
+                "Khash",
+                "Mirabad",
+                "Rudbar",
+                "Zaranj"
+            ],
+            "Nuristan": [
+                "Nuristan"
+            ],
+            "Paktika": [
+                "Orgun",
+                "Zareh Sharan",
+                "Zarghun Shahr"
+            ],
+            "Paktiya": [
+                "Ghardez",
+                "\\'Ali Khayl"
+            ],
+            "Parwan": [
+                "Charikar",
+                "Jabal-os-Saraj"
+            ],
+            "Qandahar": [
+                "Qandahar"
+            ],
+            "Qunduz": [
+                "Dasht-e Archa",
+                "Emam Saheb",
+                "Hazart Imam",
+                "Khanabad",
+                "Qal\\'eh-ye Zal",
+                "Qunduz"
+            ],
+            "Samangan": [
+                "Aybak",
+                "Kholm"
+            ],
+            "Sar-e Pul": [
+                "Aybak",
+                "Kholm"
+            ],
+            "Takhar": [
+                "Chah Ab",
+                "Eshkamesh",
+                "Farkhar",
+                "Khwajeh Ghar",
+                "Rostaq",
+                "Taloqan",
+                "Yangi Qal\\'eh"
+            ],
+            "Uruzgan": [
+                "Deh Rawud",
+                "Gaz Ab",
+                "Tarin Kawt",
+                "Uruzgan"
+            ],
+            "Wardag": [
+                "Gardan Diwal",
+                "Maydanshahr"
+            ],
+            "Zabul": [
+                "Qalat-e Ghilzay"
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "name": "Aland Islands",
+        "iso3": "ALA",
+        "iso2": "AX",
+        "phone_code": "+358-18",
+        "capital": "Mariehamn",
+        "currency": "EUR"
+    },
+    {
+        "id": 3,
+        "name": "Albania",
+        "iso3": "ALB",
+        "iso2": "AL",
+        "phone_code": "355",
+        "capital": "Tirana",
+        "currency": "ALL",
+        "states": {
+            "Berat": [
+                "Berat",
+                "Polican",
+                "Ure Vajgurore"
+            ],
+            "Bulqize": [
+                "Bulqize"
+            ],
+            "Delvine": [
+                "Delvine"
+            ],
+            "Devoll": [
+                "Bilisht"
+            ],
+            "Dibre": [
+                "Maqellare",
+                "Peshkopi"
+            ],
+            "Durres": [
+                "Durres",
+                "Shijak"
+            ],
+            "Elbasan": [
+                "Cerrik",
+                "Elbasan",
+                "Kerrabe"
+            ],
+            "Fier": [
+                "Fier",
+                "Patos",
+                "Roskovec"
+            ],
+            "Gjirokaster": [
+                "Gjirokaster",
+                "Libohove"
+            ],
+            "Gramsh": [
+                "Gramsh"
+            ],
+            "Has": [
+                "Krume"
+            ],
+            "Kavaje": [
+                "Kavaje"
+            ],
+            "Kolonje": [
+                "Erseke",
+                "Leskovik"
+            ],
+            "Korce": [
+                "Korce",
+                "Maliq"
+            ],
+            "Kruje": [
+                "Fushe-Kruje",
+                "Kruje",
+                "Mamurras",
+                "Milot"
+            ],
+            "Kucove": [
+                "Kucove"
+            ],
+            "Kukes": [
+                "Kukes"
+            ],
+            "Kurbin": [
+                "Lac"
+            ],
+            "Lezhe": [
+                "Lezhe",
+                "Shengjin"
+            ],
+            "Librazhd": [
+                "Librazhd",
+                "Perrenjas"
+            ],
+            "Lushnje": [
+                "Lushnje",
+                "Rrogozhine"
+            ],
+            "Mallakaster": [
+                "Ballsh"
+            ],
+            "Malsi e Madhe": [
+                "Ballsh"
+            ],
+            "Mat": [
+                "Burrel",
+                "Klos",
+                "Kraste",
+                "Ulze"
+            ],
+            "Mirdite": [
+                "Kurbnesh",
+                "Rreshen",
+                "Rubik"
+            ],
+            "Peqin": [
+                "Peqin"
+            ],
+            "Permet": [
+                "Kelcyre",
+                "Permet"
+            ],
+            "Pogradec": [
+                "Pogradec"
+            ],
+            "Puke": [
+                "Fierze",
+                "Fushe-Arrez",
+                "Puke"
+            ],
+            "Sarande": [
+                "Konispol",
+                "Sarande"
+            ],
+            "Shkoder": [
+                "Shkoder"
+            ],
+            "Skrapar": [
+                "Corovode"
+            ],
+            "Tepelene": [
+                "Memaliaj",
+                "Tepelene"
+            ],
+            "Tirane": [
+                "Kamze",
+                "Paskuqan",
+                "Tirane",
+                "Vore"
+            ],
+            "Tropoje": [
+                "Bajram Curri"
+            ],
+            "Vlore": [
+                "Himare",
+                "Orikum",
+                "Selenice",
+                "Vlore"
+            ]
+        }
+    }
+    ];
+
+var data2Length = data2.length;
+console.log(data2Length);
+
+// log names of countries
+for(var i=0;i<data2Length;i++){
+  console.log(data2[i].name); // afg,albama,albania
+}
+
+// log state names of all countries and individual
+
+for(var i=0;i<data2Length;i++){
+
+  if(data2[i].states && data2[i].states !== undefined && data2[i].states !== null){
+    console.log(data2[i].states); // all states [][]
+  }
+
+}
+
+// log kabul cities in afg
+console.time('calculateKabul');
+for(var j=0;j<data2Length;j++){
+
+  if(data2[j].name === 'Afghanistan'){
+
+      var states = data2[j].states;
+      
+          for(var st in states){
+             
+              if(st === 'Kabul'){
+             
+                  var kabulCities = states[st];
+
+                    for(var k=0;k<kabulCities.length;k++){
+                      console.log('kabul cities are:->',kabulCities[k]);
+                    } 
+              }  
+          }
+  }
+
+}
+console.timeEnd('calculateKabul');
+
+
+var data3 = {
+	
+  "USA": {
+		"California": {
+			"Los Angeles": ["90001", "90002", "90003", "90004"],
+			"San Diego": ["92093", "92101"]
+		},
+		"Texas": {
+			"Dallas": ["75201", "75202"],
+			"Austin": ["73301", "73344"]
+		}
+	},
+	"India": {
+		"Assam": {
+			"Dispur": ["781005"],
+			"Guwahati" : ["781030", "781030"]
+		},
+		"Gujarat": {
+			"Vadodara" : ["390011", "390020"],
+			"Surat" : ["395006", "395002"]
+		}
+	}
+
+};
+
+
+// log all countries
+
+for(var c in data3){
+  console.log(c);
+}
+
+
+// log Gujarat cities and their pin codes
+
+for(var KEY in data3){
+
+      if(KEY === 'India'){
+
+        var states = data3[KEY];
+
+          for(var citi in states){
+
+            if(citi === 'Gujarat'){
+
+              var cities = states[citi];
+
+                for(var zip in cities){
+                  console.log(zip);
+                  // console.log(cities[zip]);
+                    for(var zips=0;zips<cities[zip].length;zips++){
+                      console.log('zips are:->',cities[zip][zips]);
+                      
+                    }
+                }
+            }
+          }
+      }
+
+}
+
+
+
+
+
+</script>
+
+</html>

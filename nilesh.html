@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<label> Username </label><input type="text" id="val" oninput="inputChange(event)">
+
+<label> your input is: </label> <b id="inval"></b>
+
+
+    <script>
+
+       // reverse a string
+
+       const STR = 'i am a good guy';
+
+       let rev = STR.split(' ').reverse() //  ["guy", "good", "a", "am", "i"]
+         .join(''); // guygoodaami
+
+       console.log(rev);
+
+       // to reverse individual
+
+       let rev2 = STR.split(' '); //  ["i", "am", "a", "good", "guy"]
+       let temp = [];
+       let op = [];
+
+       for(let i=0;i<rev2.length;i++){
+          
+
+       temp.push ( rev2[i].split('').reverse().join('') );
+        
+       }
+
+       op.push( temp.reverse().join('') );
+
+      
+       console.log(op);
+
+       
+// traditional
+
+
+const str = 'something';
+
+let strRev = '';
+
+       let strLength = str.length;
+
+    for(let i=strLength-1;i>=0;i--){
+
+         strRev = strRev + str[i];
+        
+    }   
+
+
+    console.log(strRev);
+    
+
+// 
+
+
+
+
+
+
+// two way binding
+
+function inputChange(e){
+    
+    console.log(e.target.value);
+
+    var toShow = e.target.value;
+    document.getElementById('inval').innerHTML = toShow;
+    // toShow.value = e.target.value;
+
+}
+
+
+
+  
+        
+
+
+    </script>    
+
+    
+</body>
+</html>
