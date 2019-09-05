@@ -1,4 +1,4 @@
-over riding in js and over loading in typescript as optional paramter function
+
 https://stackoverflow.com/questions/45464245/angular-unexpected-token-a-constructor-method-accessor-or-property-was-expe
 refer class vs interface in ts
 
