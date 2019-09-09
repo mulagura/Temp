@@ -1,5 +1,6 @@
 
 https://stackoverflow.com/questions/45464245/angular-unexpected-token-a-constructor-method-accessor-or-property-was-expe
+https://stackoverflow.com/questions/47732353/why-cant-we-use-the-let-keyword-inside-a-class-in-typescript
 refer class vs interface in ts
 
 
