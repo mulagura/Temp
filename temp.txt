@@ -249,3 +249,58 @@ angular with forms and ...
 </body>
 
 </html>
+
+
+..............................
+img compress
+
+https://www.npmjs.com/package/ng2-image-compress
+
+https://www.npmjs.com/package/ngx-image-compress
+
+<div>
+    
+    <label> Upload image here: </label>
+    <input type="file" name="pic" accept="image/*" (change)="onFileChange($event)" />
+
+
+
+</div>
+
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+
+  public imgHeight:number;
+  public imgWidth:number;
+  public imgSize:number;
+
+
+  onFileChange(e){
+
+
+    // img size
+
+     this.imgSize = e.target.files[0].size;
+    console.log('image size in KBs:->',this.imgSize/1000,'KB');
+
+    // img width and height
+
+    this.imgWidth = e.target.offsetHeight;
+    this.imgHeight =  e.target.offsetWidth;
+    console.log('width',this.imgWidth,'height',this.imgHeight);
+  
+
+  
+    
+
+  }
+  
+}
+
