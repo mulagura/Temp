@@ -3,6 +3,8 @@ https://stackoverflow.com/questions/45464245/angular-unexpected-token-a-construc
 https://stackoverflow.com/questions/47732353/why-cant-we-use-the-let-keyword-inside-a-class-in-typescript
 refer class vs interface in ts
 
+https://github.com/mgechev/angular-performance-checklist
+
 
 Difference between let and const?
 How to find duplicates in array?
