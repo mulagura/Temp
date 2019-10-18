@@ -36,6 +36,10 @@ tree shaking
 6. search
 7. filtering
 8. sorting
+9. linked lists
+10 graphs
+11 trees
+12 stack/queue
 
 regex and oops
 Algorithms
