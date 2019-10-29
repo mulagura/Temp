@@ -1,6 +1,11 @@
 resolvers
 https://denys.dev/2016-11-27/dynamic-content-in-angular/
 
+https://www.google.com/search?q=ideal+angular+project+structure&rlz=1C1GCEA_enIN866IN866&oq=idea&aqs=chrome.1.69i59l2j69i57j0l3.1215j0j9&sourceid=chrome&ie=UTF-8
+
+https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7
+https://github.com/mathisGarberg/angular-folder-structure
+
 
 https://stackoverflow.com/questions/45464245/angular-unexpected-token-a-constructor-method-accessor-or-property-was-expe
 https://stackoverflow.com/questions/47732353/why-cant-we-use-the-let-keyword-inside-a-class-in-typescript
