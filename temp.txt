@@ -1,3 +1,26 @@
+genModel
+https://medium.com/@mail.bahurudeen/create-a-dynamic-form-with-configurable-fields-and-validations-using-angular-6-994db56834da
+
+css environment
+ google keyword (custom environment variables angular)
+https://www.jvandemo.com/how-to-use-environment-variables-to-configure-your-angular-application-without-a-rebuild/
+https://itnext.io/multi-environment-setup-for-your-angular-app-a211d72f1ff1
+
+
+ideal angular folder structure
+https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7
+https://github.com/mathisGarberg/angular-folder-structure
+
+https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7
+
+https://www.earthdatascience.org/workshops/intro-version-control-git/basic-git-commands/
+
+https://stackoverflow.com/questions/4089430/how-can-i-determine-the-url-that-a-local-git-repository-was-originally-cloned-fr
+
+https://stackoverflow.com/questions/47860772/gitlab-remote-http-basic-access-denied-and-fatal-authentication/51036707
+
+git remote add origin https://infygit.ad.infosys.com/Infosys-IT/Infosys-Digital-Features/recnxt/recnxt-ui/taplatform-ui.git
+
 https://blog.angularindepth.com/angular-routing-reusing-common-layout-for-pages-from-different-modules-440a23f86b57
 https://stackblitz.com/github/jbojcic1/angular-routing-example/tree/routing-reuse-layout-example-1
 https://malcoded.com/posts/angular-fundamentals-modules/
