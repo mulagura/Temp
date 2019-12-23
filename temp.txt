@@ -1,3 +1,23 @@
+//// Angular recnxt................... /////
+1. ang project as library ()
+https://nezhar.com/blog/up-and-running-library-development-with-angular-7/
+angular.json; projects:{} like my-lib:{}
+https://medium.com/@tomsu/how-to-build-a-library-for-angular-apps-4f9b38b0ed11
+https://itnext.io/angular-cli-libraries-79b0a32a1443
+ng build my-lib --watch
+import {my-lib} from 'dist_folder_name'
+https://stackoverflow.com/questions/56113034/share-a-angular-library-across-multiple-projects
+https://angular.io/guide/creating-libraries
+2. snackbar as a service
+3. date transform --> pipe
+4. environmnet -> .prod.ts, .qa.ts
+chnage in angular.json , create as configuarion:production like anothereg. qa:{}
+5. 
+
+//// .................... ////
+
+
+
 Hi all, material in angular-concepts cerate -->
 
 Created Snackbar as a service, which is injectable in all components (service is injected in all most components).
