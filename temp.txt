@@ -17,7 +17,7 @@ chnage in angular.json , create as configuarion:production like anothereg. qa:{}
 //// .................... ////
 https://stackoverflow.com/questions/54375026/how-to-change-a-materialtable-cell-content-on-click
 https://medium.com/javascript-in-plain-english/angular-material-table-with-edit-function-like-excel-7c2c53332553
-
+https://stackblitz.com/edit/inline-edit-mat-table?file=app%2Fapp.component.html
 
 Hi all, material in angular-concepts cerate -->
 
