@@ -19,7 +19,110 @@ https://stackoverflow.com/questions/54375026/how-to-change-a-materialtable-cell-
 https://medium.com/javascript-in-plain-english/angular-material-table-with-edit-function-like-excel-7c2c53332553
 https://stackblitz.com/edit/inline-edit-mat-table?file=app%2Fapp.component.html
 
+.chip{
+    display: inline-flex;
+    flex-direction: row;
+    background-color: #e5e5e5;
+    border: none;
+    cursor: default;
+    height: 36px;
+    outline: none;
+    padding: 0;
+    font-size: 14px;
+    font-color: #333333;
+    font-family:"Open Sans", sans-serif;
+    white-space: nowrap;
+    align-items: center;
+    border-radius: 16px;
+    vertical-align: middle;
+    text-decoration: none;
+    justify-content: center;
+}
+.chip-head{
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    background-color: #32C5D2;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    align-items: center;
+    user-select: none;
+    border-radius: 50%;
+    justify-content: center;
+    width: 36px;
+    color: #fff;
+    height: 36px;
+    font-size: 20px;
+    margin-right: -4px;
+}
+.chip-content{
+    cursor: inherit;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    white-space: nowrap;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.chip-svg{
+        color: #999999;
+    cursor: pointer;
+    height: auto;
+    margin: 4px 4px 0 -8px;
+  fill: currentColor;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 24px;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    user-select: none;
+    flex-shrink: 0;
+}
+.chip-svg:hover{
+    color: #666666;
+}
 
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element;let i=index" (click)="getIndex(i,'name')">
+      <span *ngIf=" !( (i === fitIndex && 'name' === fitName) && enableChip ) "> {{element.name}} </span>  
+      <div class="chip" (click)="remove(i,'name',$event)" [style.display]="!enableChip?'none':'' " *ngIf=" ( (i === fitIndex && 'name' === fitName) && enableChip ) ">
+        <div class="chip-content"> {{element.name}} </div>
+        <div class="chip-close" >
+            <svg class="chip-svg" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"></path></svg>
+        </div>
+      </div>
+      </mat-cell>
+    </ng-container>
+    
+      enableChip:boolean = false;
+  fitIndex:number;
+  fitName:string;
+  
+      getIndex(i,name){
+    event.stopPropagation();
+    console.log('index->',i,name);
+    this.fitIndex = i;
+    this.fitName = name;
+    if(name === this.fitName && i === this.fitIndex){
+      console.log('true');
+      // return true;
+      this.enableChip = true;
+    }
+    
+    
+  }
+
+  remove(i,name,el){
+    event.stopPropagation();
+    if(i === this.fitIndex && name === this.fitName){
+      console.log('if');
+      this.enableChip = false;
+
+    }
+  }
 
 genModel
 https://medium.com/@mail.bahurudeen/create-a-dynamic-form-with-configurable-fields-and-validations-using-angular-6-994db56834da
