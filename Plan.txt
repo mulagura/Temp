@@ -1,0 +1,30 @@
+Angular
+........
+basics,why angular why not others
+latest new features 
+Typescript
+folder structure
+routes,routeguards
+http,DI
+component interaction
+rxjs
+pipes,custom
+directives,custom
+resolvers
+ngClass & ngStyle
+Forms
+unit testing
+i18N
+material
+
+JS
+.....
+bubbling, capturing ,event prop, .. 
+ES6
+.....
+CSS
+.....
+Others Tools
+...............
+basic DS
+..........
