@@ -1,4 +1,44 @@
-//// Angular recnxt................... /////
+  // on mouse on leave
+  onHover(el){
+    console.log('clinet x',el.clientX, 'clinet y',el.clientY);
+    console.log('page x',el.pageX, 'page y',el.pageY);
+
+    this.x = el.clientX;
+    this.y = el.clientY;
+    
+    this.overlay = !this.overlay;
+    
+
+  }
+
+  onLeave(el){
+    // console.log(el.);
+    this.overlay = !this.overlay;
+
+    this.x = null;
+    this.y = null;
+
+  }
+
+  styleObj(){
+
+    if(this.x && this.y){
+      return{
+        position:'fixed',
+        left:this.x+'px',
+        top:this.y - height of card/2 bcz bubble css + px;
+      }
+
+    }
+
+    return{}
+  }
+  
+  
+  
+  
+  
+  //// Angular recnxt................... /////
 1. ang project as library ()
 https://nezhar.com/blog/up-and-running-library-development-with-angular-7/
 angular.json; projects:{} like my-lib:{}
