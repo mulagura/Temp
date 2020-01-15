@@ -1,317 +1,50 @@
-  [
-	{
-		"unit": "ADM",
-		"Processed": {
-			"count": 1,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		},
-		"Backlog": {
-			"count": 2,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		},
-		"Fresh": {
-			"count": 3,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		},
-		"Pending": {
-			"count": 4,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		},
-		"Total": {
-			"count": 5,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		}
-	},
-	{
-		"unit": "IS",
-		"Processed": {
-			"count": 6,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		},
-		"Backlog": {
-			"count": 7,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		},
-		"Fresh": {
-			"count": 8,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		},
-		"Pending": {
-			"count": 9,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		},
-		"Total": {
-			"count": 10,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		}
-	},
-	{
-		"unit": "ENG",
-		"Processed": {
-			"count": 11,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		},
-		"Backlog": {
-			"count": 12,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		},
-		"Fresh": {
-			"count": 13,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		},
-		"Pending": {
-			"count": 14,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		},
-		"Total": {
-			"count": 15,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		}
-	},
-	{
-		"unit": "Total",
-		"Processed": {
-			"count": 16,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		},
-		"Backlog": {
-			"count": 17,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		},
-		"Fresh": {
-			"count": 18,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		},
-		"Pending": {
-			"count": 19,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		},
-		"Total": {
-			"count": 20,
-			"id": [
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123",
-				"C123"
-			]
-		}
-	}
-]
+  table_JSON_data;
+  table_data: Array<any> = [];
+  table_data_without_UNIT: Array<any> = [];
+  table_data_with_UNIT: Array<any> = [];
+  table_header: Array<string> = [];
+  
+  
+              this.table_JSON_data = data;
+            console.log(this.table_JSON_data);
+
+            let table_JSON_dataLength = this.table_JSON_data.length;
+            let keys = Object.keys(this.table_JSON_data[0]);
+            let each_row_obj_without_UNIT = {};
+            let each_row_obj_with_UNIT = {};
+
+            for (let i = 0; i < table_JSON_dataLength; i++) {
+
+              each_row_obj_without_UNIT[i] = {};
+              each_row_obj_with_UNIT[i] = {};
+
+              for (let j = 0; j < keys.length; j++) {
+
+                if (keys[j] !== 'unit') {
+                  each_row_obj_without_UNIT[i][keys[j]] = this.table_JSON_data[i][keys[j]].count;
+                }
+
+                if( keys[j] === 'unit' ){
+                  each_row_obj_with_UNIT[i][keys[j]] = this.table_JSON_data[i][keys[j]];
+                }
+
+              }
+
+              let toPush = Object.assign(each_row_obj_with_UNIT[i],each_row_obj_without_UNIT[i]);
+              this.table_data.push(toPush )
+
+            }
+
+            console.log(this.table_data);
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 // on mouse on leave
   onHover(el){
