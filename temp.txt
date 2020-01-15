@@ -1,39 +1,31 @@
-<mat-table class="onHover" [dataSource]="dataSource">
-        <ng-container *ngFor="let column of columnDefs;let i=index" [cdkColumnDef]="column">
-            <mat-header-cell *cdkHeaderCellDef>
-                <h5 class="h5Header GreyLight ">{{headers[i]}}</h5>
-            </mat-header-cell>
-            <ng-container *ngIf="i === 0">
-                    <mat-cell *cdkCellDef="let element"> {{ element[column] }}
-                    </mat-cell>
-                </ng-container>
-                <ng-container *ngIf="i !== 0">
-            <mat-cell *cdkCellDef="let element;let j=index" (click)="showCandidates(j,column)">
-                <span
-                    *ngIf=" !( (j === selectedIndex) && column === selectedColumn && enableChip ) ">{{ element[column] }}</span>    
-                <div class="chip" (click)="removeChip(j,column,$event)" [style.display]="!enableChip?'none':'' "
-                    *ngIf=" ( (j === selectedIndex && column === selectedColumn) && enableChip ) ">
-                    <div class="chip-content"> {{element[column]}} </div>
-                    <div class="chip-close">
-                        <svg class="chip-svg" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-                            <path
-                                d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z">
-                            </path>
-                        </svg>
-                    </div>
-                </div>
-            </mat-cell>
-            </ng-container>
-        </ng-container>
-        <tr>
-            <mat-header-row *matHeaderRowDef="columnDefs"></mat-header-row>
-        </tr>
-        <tr>
-            <mat-row *matRowDef="let row; columns: columnDefs;"></mat-row>
-        </tr>
-    </mat-table>
+  // click method to show candidates
+  showCandidates(index: number, columnName: string) {
+    if (event) {
+      event.stopPropagation();
+    }
+    this.selectedIndex = index;
+    this.selectedColumn = columnName;
 
- 
+    if (columnName === this.selectedColumn && index === this.selectedIndex) {
+      this.enableChip = true;
+    }
+    // event emitter to pass data; passing index and respective column 
+    console.log(columnName);
+    this.valueToParent.emit({ index: index, column: columnName });
+
+
+  }
+
+  // show value and chip methods
+  removeChip(index: number, columnName: string, el) {
+    if (event) {
+      event.stopPropagation();
+    }
+
+    if (index === this.selectedIndex && columnName === this.selectedColumn) {
+      this.enableChip = false;
+    }
+  } 
 
             let table_JSON_dataLength = this.table_JSON_data.length;
             let keys = Object.keys(this.table_JSON_data[0]);
