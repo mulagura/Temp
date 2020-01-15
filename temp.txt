@@ -1,3 +1,63 @@
+  showCandidates(index: number, columnName: string, unit: object) {
+    let unitName;
+    if (event) {
+      event.stopPropagation();
+    }
+    this.selectedIndex = index;
+    this.selectedColumn = columnName;
+
+    if (columnName === this.selectedColumn && index === this.selectedIndex) {
+      this.enableChip = true;
+      if (this.enableChip) {
+
+        for (let unitKey in unit) {
+          if (unitKey === 'unit') {
+            unitName = unit[unitKey];
+          }
+        }
+      }
+    }
+
+    let table_JSON_dataLength = this.table_JSON_data.length;
+
+    for (let i = 0; i < table_JSON_dataLength; i++) {
+
+      for(let eachObjRow in this.table_JSON_data[i]){
+ 
+        if( this.table_JSON_data[i][eachObjRow] === unitName ){
+
+          let thatObj = this.table_JSON_data[i];
+
+          for(let unitRow in thatObj){
+
+            if(unitRow === columnName){
+
+              this.candidateIdList.push(
+                thatObj[unitRow].id
+              )
+              
+            }
+            
+          }
+          
+        }
+        
+      }
+
+
+
+
+
+    }
+
+    console.log(index, columnName, unitName);
+    console.log(this.candidateIdList);
+  
+  
+  
+  
+  
+  
   // click method to show candidates
   showCandidates(index: number, columnName: string) {
     if (event) {
