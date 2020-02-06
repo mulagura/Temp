@@ -1,3 +1,7 @@
+https://medium.com/code-divoire/angular-when-httpinterceptor-doesnt-work-with-lazy-loaded-modules-26ae5b694b75
+interceptor not working in shared level module angular
+  
+  
   showCandidates(index: number, columnName: string, unit: object) {
     let unitName;
     if (event) {
