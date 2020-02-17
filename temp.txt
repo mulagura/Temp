@@ -1,3 +1,204 @@
+{
+    "eventId": 5,
+    "eventDate": "2020-02-14",
+    "eventCity": "Ahmedabad",
+    "eventDescription": "event demo 65",
+    "unitDetailsMap": {
+        "DNA": [
+            {
+                "unitId": 230,
+                "unitCode": "DNA",
+                "unitDescription": "Data & Analytics Unit",
+                "skillDetails": [
+                    {
+                        "skillId": 12865,
+                        "taxonomyPath": "Aerospace|Airframe",
+                        "eventInviteSent": "2",
+                        "target": 140,
+                        "maxExperience": "1",
+                        "minExperience": "3"
+                    },
+                    {
+                        "skillId": 12866,
+                        "taxonomyPath": "Aerospace|Interiors/Exteriors",
+                        "eventInviteSent": "2",
+                        "target": 140,
+                        "maxExperience": "1",
+                        "minExperience": "3"
+                    }
+                ]
+            }
+        ],
+        "ADM": [
+            {
+                "unitId": 214,
+                "unitCode": "ADM",
+                "unitDescription": "Application Development and Maintenance",
+                "skillDetails": [
+                    {
+                        "skillId": 12867,
+                        "taxonomyPath": "Aerospace|MRO",
+                        "eventInviteSent": "1",
+                        "target": 101,
+                        "maxExperience": "2",
+                        "minExperience": null
+                    }
+                ]
+            }
+        ],
+        "CIS": [
+            {
+                "unitId": 193,
+                "unitCode": "CIS",
+                "unitDescription": "Cloud & Infrastructure Services",
+                "skillDetails": [
+                    {
+                        "skillId": 12868,
+                        "taxonomyPath": "Aerospace|Space Technologies",
+                        "eventInviteSent": "1",
+                        "target": 510,
+                        "maxExperience": "2",
+                        "minExperience": "7"
+                    }
+                ]
+            }
+        ]
+    }
+}
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Service Line Column -->
+    <ng-container matColumnDef="Service Line">
+        <th mat-header-cell *matHeaderCellDef> Service Line </th>
+        <td mat-cell *matCellDef="let element ; let index = index">
+            <h4 class="h4Header" *ngIf="index === 0">
+                <strong>{{element.serviceLine}}</strong>
+            </h4>
+        </td>
+    </ng-container>
+
+    <!-- Skill Column -->
+    <ng-container matColumnDef="skill">
+        <th mat-header-cell *matHeaderCellDef> Skill </th>
+        <td mat-cell *matCellDef="let element ;let index = index">
+            <app-editable (update)="updateField(index, 'skill')">
+                <ng-template viewMode>
+                    <span class="Me-PrimaryLight"> {{element.skill}}</span>
+                </ng-template>
+                <ng-template editMode>
+                    <mat-form-field class="example-full-width">
+                        <input matInput [formControl]="getControl(index, 'skill')">
+                        <mat-error *ngIf="getControl(index, 'skill').hasError('required')">
+                            Field is
+                            <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </ng-template>
+            </app-editable>
+        </td>
+    </ng-container>
+
+    <!-- Minimum Experience Column -->
+    <ng-container matColumnDef="Minimum Experience">
+        <th mat-header-cell *matHeaderCellDef> Minimum Experience </th>
+        <td mat-cell class="pullRight" *matCellDef="let element ;let index = index">
+            <app-editable (update)="updateField(index, 'minExp')">
+                <ng-template viewMode>
+                    <span> {{element.minExp}}</span>
+                </ng-template>
+                <ng-template editMode>
+                    <mat-form-field class="example-full-width">
+                        <input matInput [formControl]="getControl(index, 'minExp')">
+                        <mat-error *ngIf="getControl(index, 'minExp').hasError('required')">
+                            Field is
+                            <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </ng-template>
+            </app-editable>
+        </td>
+    </ng-container>
+
+    <!-- Maximum Experience Column -->
+    <ng-container matColumnDef="Maximum Experience">
+        <th mat-header-cell *matHeaderCellDef> Maximum Experience </th>
+        <td mat-cell class="pullRight" *matCellDef="let element ;let index = index">
+            <app-editable (update)="updateField(index, 'maxExp')">
+                <ng-template viewMode>
+                    <span> {{element.maxExp}}</span>
+                </ng-template>
+                <ng-template editMode>
+                    <mat-form-field class="example-full-width">
+                        <input matInput [formControl]="getControl(index, 'maxExp')">
+                        <mat-error *ngIf="getControl(index, 'maxExp').hasError('required')">
+                            Field is
+                            <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </ng-template>
+            </app-editable>
+        </td>
+    </ng-container>
+
+    <!-- Target Column -->
+    <ng-container matColumnDef="Target">
+        <th mat-header-cell *matHeaderCellDef> Target </th>
+        <td mat-cell class="pullRight" *matCellDef="let element ;let index = index">
+            <app-editable (update)="updateField(index, 'target')">
+                <ng-template viewMode>
+                    <span> {{element.target}}</span>
+                </ng-template>
+                <ng-template editMode>
+                    <mat-form-field class="example-full-width">
+                        <input matInput [formControl]="getControl(index, 'target')">
+                        <mat-error *ngIf="getControl(index, 'target').hasError('required')">
+                            Field is
+                            <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </ng-template>
+            </app-editable>
+        </td>
+    </ng-container>
+
+    <!-- Event invite sent Column -->
+    <ng-container matColumnDef="Event invite sent">
+        <th mat-header-cell *matHeaderCellDef> Event invite sent </th>
+        <td mat-cell class="pullRight" *matCellDef="let element ;let index = index">
+            <app-editable (update)="updateField(index, 'eventInvite')">
+                <ng-template viewMode>
+                    <span> {{element.eventInvite}}</span>
+                </ng-template>
+                <ng-template editMode>
+                    <mat-form-field class="example-full-width">
+                        <input matInput [formControl]="getControl(index, 'eventInvite')">
+                        <mat-error *ngIf="getControl(index, 'eventInvite').hasError('required')">
+                            Field is
+                            <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </ng-template>
+            </app-editable>
+        </td>
+    </ng-container>
+    <!-- btn Column -->
+    <ng-container matColumnDef="btn">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element ; let index = index">
+
+
+        </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
 https://medium.com/code-divoire/angular-when-httpinterceptor-doesnt-work-with-lazy-loaded-modules-26ae5b694b75
 interceptor not working in shared level module angular
   
