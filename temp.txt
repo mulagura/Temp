@@ -198,6 +198,25 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
+    if(this.eventDetails){
+
+      for(let mapKey in this.eventDetails){
+        if(mapKey === 'unitDetailsMap'){
+          // console.log('mon',this.eventDetails);
+          let keysOfUnits = Object.keys(this.eventDetails.unitDetailsMap);
+          console.log('mon',keysOfUnits);
+          // let dataOf = Object.values(this.eventDetails.unitDetailsMap)
+          // console.log('mon',dataOf);
+          
+          // for(let i=0;i<dataOf.length;i++){
+          //   // if(dataOf[i].unitCode === )
+          //   console.log(dataOf[i]);
+            
+          // }
+          console.log(keysOfUnits[0]);
+          
+          console.log(this.eventDetails.unitDetailsMap[keysOfUnits[0]]);
+
 
 https://medium.com/code-divoire/angular-when-httpinterceptor-doesnt-work-with-lazy-loaded-modules-26ae5b694b75
 interceptor not working in shared level module angular
