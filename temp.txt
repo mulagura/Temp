@@ -1,3 +1,10 @@
+https://stackblitz.com/edit/angular-5jeuap?file=src%2Fapp%2Fapp.component.ts
+https://material.angular.io/components/table/overview#filtering
+ngoninit filter data checkbox
+
+
+
+
 0: {eventId: 1, cityName: "Ahmedabad", regionName: "Karnataka", companyHiringTypeName: "IL Fresher", companyHiringTypeId: 2, …}
 1: {eventId: 4, cityName: "Ahmedabad", regionName: "Karnataka", companyHiringTypeName: "IL Fresher", companyHiringTypeId: 2, …}
 2: {eventId: 5, cityName: "Ahmedabad", regionName: "Karnataka", companyHiringTypeName: "IL Lateral", companyHiringTypeId: 1, …}
