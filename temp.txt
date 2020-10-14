@@ -1,3 +1,48 @@
+Epam
+CDP in angular
+NgDocheck vs ngonchnages
+Key of interface can have any name
+Generic interface
+Sum1.add(10).add(20).add(30).sum
+Let sum1 = new Cumulative()
+
+How interceptor being used, mechanism
+
+oops in js
+
+Let a = [12,'3',true,'abc',40]
+If pass 1, output should be greatest in that array, if 2 second largest number, 1 40 2 12 3 '3'
+
+How to implement courasel, prev next methods
+
+log 1
+Settimout log 2
+Log 3,.  Make it print 1 2 3
+
+pass json in route how
+
+what is pure function
+
+Polly fills in js
+call apply bind, write functionality like apply which work's in old browser also
+
+Create custom event in js
+
+one input tag is getting re used every component having 2 way data binding, I need one particular component single way binding
+
+chaining using rxjs
+
+
+Api 3 after Api 2 after api 1...scenario, fork join
+Virtual scroll and it's alternative
+Local storage vs session storage
+Interceptor
+Without using @Input alternative
+How many route modules can we use in 1 ang project
+Async pipe
+
+
+
 • Created initial project setup,documented and helped team-members to kick start development.
 • Documented the GIT usage, telemetry and their configs.
 • Worked on multiple modules viz. connectinfy,careersite, op, recruiter and now in offer module which helped me to pick up things in short time.
