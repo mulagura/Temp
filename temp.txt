@@ -42,30 +42,6 @@ How many route modules can we use in 1 ang project
 Async pipe
 
 
-
-• Created initial project setup,documented and helped team-members to kick start development.
-• Documented the GIT usage, telemetry and their configs.
-• Worked on multiple modules viz. connectinfy,careersite, op, recruiter and now in offer module which helped me to pick up things in short time.
-• Solved critical issues like sonar errors, connectinfy VA/SAST issues, optimised search functionality. 
-• Created working solution for formula injection while uploading excel file.
-• I am known for quality work and bug free code, following proper indentation and annotations while developing .
-• Created multiple reusable components
-   ➼ multiple file attach
-   ➼ snack bar with customised message,time and icon
-   ➼ date to seconds conersio pipe
-• Helped most of the team members whether it's critical issue or bug or development which is most of the times unrecognised task.
-• I am enthusiastic and  showed interest on new things which sharpens my tech stack skills.
-
-
-
-• I always adhere to most of commitments/deliverables, but some couldn't because cooperation from other team,
-• I always try to put in my innovativeness / make it reusable whatever the task being given, but there were situations where it is time bound which impacted expected result.
-• Sometimes I lack in proper collaboration among team, because I always felt individuality should be maintained, peeking in other work would create chaos.
-• I think planning should be in more efficient way, there is a great saying by Abraham lincoln,  If I had eight hours to chop down a tree, I’d spend the first six of them sharpening my axe.
-• I wish I could have contributed more if guided in architectural view and little bit recognition.
-
-
-
 https://stackblitz.com/edit/angular-5jeuap?file=src%2Fapp%2Fapp.component.ts
 https://material.angular.io/components/table/overview#filtering
 ngoninit filter data checkbox
